@@ -1,0 +1,43 @@
+CREATE TABLE Payment(
+BillNO int NOT NULL AUTO_INCREMENT PRIMARY KEY,PaymentDate TIMESTAMP, renewDate TIMESTAMP,
+EmailID varchar(50),FOREIGN KEY (EmailID) REFERENCES Customer(EmailID));
+ --Payment Table
+
+
+CREATE TABLE ReturnBook (EmailID varchar(50),BookISBN varchar(13),returnDate DATE,
+startTime TIME,endTime TIME,FOREIGN key (EmailID) REFERENCES Customer(EmailID),
+FOREIGN key (BookISBN) REFERENCES Books(BookISBN));   --ReturnBooks Table
+
+CREATE TABLE Books  (BookISBN varchar(13) NOT NULL PRIMARY KEY,Author varchar(50),Title varchar(100),
+Publisher varchar(100),Language varchar(25),PublishedDate DATE,Edition varchar(5)
+,NoOfCopies varchar(5),Image BLOB);   --Books Table
+
+CREATE TABLE Admin (AdminID varchar(20) NOT NULL PRIMARY KEY ,Admin_Password varchar(20)
+);    --Admin Table
+
+CREATE TABLE Orders (OrderID varchar(15) NOT NULL PRIMARY KEY,
+orderDate TIMESTAMP,EmailID varchar(50),FOREIGN KEY (EmailID)
+REFERENCES Customer(EmailID));  --Orders Table
+
+CREATE TABLE ForOrders (BookISBN varchar(13),OrderID varchar(15),FOREIGN KEY
+(BookISBN) REFERENCES Books(BookISBN),FOREIGN KEY (OrderID)
+ REFERENCES Orders(OrderID));   --ForOrders table
+
+ CREATE TABLE Delivery(status char(1),deliveryDate DATE,deliverystartTime TIME
+,deliveryendTime TIME,OrderID varchar(15),FOREIGN KEY (OrderID) REFERENCES
+Orders(OrderID));
+
+
+--adding billno to Customer
+ALTER TABLE Customer
+ADD BillNO varchar(10);
+
+--making billNO foreign key
+ALTER TABLE Customer ADD FOREIGN KEY (BillNO) REFERENCES Payment(BillNO);
+
+
+--adding adminid to books
+ALTER TABLE Books ADD AdminID varchar(20);
+
+--making adminid foreign KEY
+ALTER TABLE Books ADD FOREIGN KEY (AdminId) REFERENCES Admin(AdminID);

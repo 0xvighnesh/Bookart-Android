@@ -1,0 +1,50 @@
+--Branch table
+CREATE TABLE Branch (branch_name varchar(50) NOT NULL PRIMARY KEY,
+assets varchar(12),branch_city varchar(20));
+
+--Customer TABLE
+CREATE TABLE Customer(
+  Customer_ID varchar(11) NOT NULL PRIMARY KEY,
+  Customer_name varchar(15),
+  Customer_street varchar(15),
+  Customer_city varchar(20)
+);
+
+--Debit Card
+CREATE TABLE DebitCard(
+  debit_card_number varchar(19) NOT NULL PRIMARY KEY,
+  expiry_date DATETIME
+);
+
+--Account TABLE
+CREATE TABLE Account(
+  account_number varchar(18) NOT NULL PRIMARY KEY,
+  category varchar(20),
+  balance varchar(15)
+);
+
+--Customer-Debit DebitCard
+CREATE TABLE Customer_debitcard(
+  Customer_ID varchar(11),debit_card_number varchar(19),
+  account_number varchar(18),
+  FOREIGN KEY(Customer_ID) references Customer(Customer_ID),
+  FOREIGN KEY(debit_card_number) references DebitCard(debit_card_number),
+  FOREIGN KEY(account_number) references Account(account_number)
+);
+
+--banker-info
+CREATE TABLE Banker_info(
+  banker_id varchar(20) NOT NULL PRIMARY KEY,
+  banker_name varchar(20),
+  banker_email varchar(50)
+);
+
+--Banker TABLE
+CREATE TABLE Banker(
+  branch_name varchar(50),
+  Customer_ID varchar(11),
+  banker_id varchar(20),
+  FOREIGN KEY(Customer_ID) references Customer(Customer_ID),
+  FOREIGN KEY(banker_id) references Banker_info(banker_id),
+  FOREIGN KEY(branch_name) references Branch(branch_name)
+);

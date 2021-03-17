@@ -1,0 +1,43 @@
+Incremental build model
+https://en.wikipedia.org/wiki/Incremental_build_model
+
+Client-server architecture
+http://www.webopedia.com/TERM/C/client_server_architecture.html
+
+Requirement Gathering
+https://en.wikipedia.org/wiki/Requirements_analysis
+
+Development model for apps
+http://sourcebits.com/app-development-design-blog/what-is-agile-development-for-mobile-apps/ 
+
+Android encryption
+http://www.developer.com/ws/android/encrypting-with-android-cryptography-api.html
+
+ER Diagram
+https://www.smartdraw.com/entity-relationship-diagram/
+https://dba.stackexchange.com/questions/76532/how-to-represent-foreign-key-in-an-er-diagram
+Book:Database System Concepts 6th Edition Chapter-7th
+ 
+Schema Diagram
+https://www.tutorialspoint.com/dbms/dbms_data_schemas.htm
+
+
+Data flow diagram
+https://en.wikipedia.org/wiki/Data_flow_diagram
+https://www.youtube.com/watch?v=PF40PTJxn4Q
+
+Android Mysql connection
+https://www.youtube.com/watch?v=8Ou1ERM2MOw&list=PLk7v1Z2rk4hjQaV062aE_CW68xgXdYFpV&index=4
+
+Bank Schema Diagram
+http://www.cs.ust.hk/~wilfred/dbweb/erd.html
+
+Andoid Login and Registration
+https://www.youtube.com/watch?v=PFvnSZHO3cI
+
+Android JSON Parsing recyclerView with Image and Text
+https://androidjson.com/android-json-parsing-recyclerview-image-text/
+
+
+
+
